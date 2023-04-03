@@ -30,7 +30,7 @@ int main(){
         
         recvfrom(sock, &repeats, 1024, 0, (struct sockaddr *)&receiver, &receiversize);
         std::cout << "repeats: " << repeats << std::endl;
-        for (int i = 1; i != repeats; i++){
+        for (int i = 1; i != repeats + 1; i++){
             std::cout << "send: " << i <<std::endl;
             sendto(sock, &i, sizeof(repeats), 0, (struct sockaddr *)&sender, sizeof(sender));
         }
